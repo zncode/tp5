@@ -13,9 +13,10 @@ return [
         // 数据库类型
         'type'           => 'sqlsrv',
         // 服务器地址
-        'hostname'       => '192.168.1.113',
+        'hostname'       => '192.168.1.166',
         // 数据库名
-        'database'       => 'AIS20161116135110',
+        //'database'       => 'AIS2011116135110',
+        'database'       => 'AIS201407281401391',
         // 用户名
         'username'       => 'sa',
         // 密码

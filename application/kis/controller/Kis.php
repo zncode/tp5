@@ -26,19 +26,21 @@ class Kis
 		// }
     	//return 'kisProduct';
 
-    	// $items = ItemBase::all();
+    	$items = ItemBase::all();
 
-    	// foreach($items as $key => $value)
-    	// {
-    	// 	$datas[] = $value->getData();
-    	// }
-    	
-    	$items = Db::table('t_Item')
-		->where('FItemClassID', 4)
-		->where('FDetail', 1)
-		->select();	 
+    	foreach($items as $key => $value)
+    	{
+    		$datas[] = $value->getData();
+    	}
+    	$json = json_encode($datas);
+  //   	$items = Db::table('t_Item')
+  //   	->alias('i')
+  //   	->join('t_ICItemBase b','i.FItemID = b.FItemID', 'LEFT')
+		// ->where('i.FItemClassID', 4)
+		// ->where('i.FDetail', 1)
+		// ->select();	 
 
-    	$json = json_encode($items);
+  //   	$json = json_encode($items);
     	echo $json;
     }
 
