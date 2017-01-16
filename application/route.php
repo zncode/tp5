@@ -16,9 +16,10 @@ Route::rule('kis','kis/kis/getProduct');
 
 
 Route::rule('categorys','kis/kis/getCategorys');
-Route::rule('goods','ecshop/Goods/getGoods');
+Route::rule('product','ecshop/Goods/getGood');
+Route::rule('products','ecshop/Goods/getGoods');
 
-
+Route::rule('excel','index/index/excel');
 
 return [
     '__pattern__' => [

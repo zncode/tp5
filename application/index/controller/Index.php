@@ -12,4 +12,32 @@ class Index
     {
     	return 'test';
     }
+
+    public function excel()
+    {
+    	$excelPath = 'c:\111.csv';
+    	$file = fopen($excelPath, 'r');
+
+    	while ($data = fgetcsv($file)) { 
+    		//每次读取CSV里面的一行内容
+			//print_r($data); //此为一个数组，要获得每一个数据，访问数组下标即可
+			$number = trim($data[1]);
+			if($number != '' || $number != '无' || $number != '条形码')
+			{
+				// if($data[1] == 6902952880294)
+				// {
+				// 	$aaa[] = $data;
+				// }
+				$goods[$number][] = trim($data[0]); 				
+			}
+		}
+		// print_r($aaa);
+		// die();
+
+		//print_r($goods);
+		foreach($goods as $key => $value){
+			echo $key.','.$value[0].','.count($value).'<br>';
+		}
+    	//return 'test';
+    }
 }
